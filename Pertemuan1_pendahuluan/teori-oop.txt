@@ -1,0 +1,58 @@
+== OOP (Object Oriented Programming) ==
+
+oop merupakan gaya pemrograman atau programming style atau paradigma pemrograman
+
+untuk phpdasar menggunakan procedural programming
+
+
+procedural programming :
+- instruksi dilakukan langkah demi langkah
+- memecah program menjadi bagian-bagian kecil
+- disebut prosedur, subroutine atau function
+- liner/top-to-buttom -> membaca program dari atas ke bawah
+- php, javascript, pascal, c, cobol, fortran, algol
+
+
+kelebihan procedural programming :
+- to-the-point
+- simplicity dan kemudahan implementasi (untuk complier dan interpreter)
+- mudah di telusuri
+- membutuhkan lebih sedikit memory (dibandingkan dengan OOP)
+
+
+Object Oriented Programming :
+- menyusun semua kode program dan struktur data sebagai objek
+- objek adalah unit dasar dari program
+- objek menyimpan data dan perilaku dari class
+- objek bisa saling berinteraksi
+- java, javascript, php, python,  c++
+
+
+kelebihan OOP :
+- representasi dunia nyata
+- enkapsulasi dan abstraksi data
+- reusability
+- skalibilitas dan eksibilitas
+- kemudahan pengelolaan
+- kolaborasi
+- digunakan framework
+
+
+konsep OOP pada php :
+*BASIC : 
+- class dan Object
+- property dan method
+- constructor
+- object type
+- inheritance
+- visibilty / access modifier (public, private, protected)
+- setter dan getter
+- static method
+
+*ADVANCED :
+- abstract dan interface
+- interceptor
+- object cloning
+- callbacks dan closures
+- namespaces dan autoloading
+- ...

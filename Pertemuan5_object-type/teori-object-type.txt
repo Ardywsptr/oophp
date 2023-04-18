@@ -1,0 +1,33 @@
+== OBJECT TYPE ==
+
+menggunakan object sebagai tipe data yang dapat di gunakan pada class
+
+
+untuk membuat object type bisa langsung membuat method di dalam class ataupun membuat class baru yang berisi object type
+
+
+studi kasus nya yaitu membuat/mencetak informasi dari produk yang ada
+
+
+pada praktek ini kita membuat class baru untuk membuat object type -> pada class ini hanya mencetak dari object yang kita punya
+
+
+cara menjalankan function cetak -> cetak informasi lengkap dari produk1 :
+$infoProduk1 = new CetakInfoProduk();
+echo $infoProduk1->cetak($produk1);
+
+
+agar supaya parameter function cetak hanya menerima spesifik class produk tinggal tambahkan nama tipe object (class) sebelum parameter nya,contoh disini type object nya yaitu Produk.
+
+contoh :
+public function cetak(Produk $produk){
+        $str = "{$produk->judul} | {$produk->getLabel()} (Rp. {$produk->harga})";
+
+        return $str;
+    }
+
+
+contoh type object sebenarnya hanya berada pada paramater, contoh :
+public function cetak(Produk $produk){
+        ........
+    }

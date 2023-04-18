@@ -1,0 +1,32 @@
+== CONSTANT & MAGIC CONSTANT==
+
+constant merupakan identifier untuk menyimpan nilai -> berbeda dengan variabel -> nilai contant tidak dapat berubah
+
+ada 2 cara membuat constant :
+- define(name, value)
+
+    contoh :
+    define("NAMA", "Ardy Wirasaputra");
+    echo NAMA;
+
+- const
+    contoh :
+    const NAMA = Ardy Wirasaputra;
+    echo NAMA;
+
+dalam membuat constant dengan define atau const biasakan nama nya huruf besar semua, supaya membedakan mana constanta mana variabel.
+
+perbedaan define dengan const -> ketika ingin menggunakan konsep oop. menggunakan define tidak bisa disimpan ke dalam sebuah class, hanya bisa di simpan di luar class sebagai constant global. sedangkan const bisa di simpan didalam sebuat class, sehingga const bisa digunakan dalam oop.
+
+
+MAGIC CONSTANT ->  constanta yang ada di php :
+- __LINE__
+- __FILE__
+- __DIR__
+- __FUNCTION__
+- __CLASS__
+- __TRAIT__
+- __METHOD__
+- __NAMESPACE__
+
+isi dari magic constant sudah ada dan tidak bisa diubah

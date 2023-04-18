@@ -1,0 +1,18 @@
+== OVERRIDING ==
+
+overriding merupakan sebuah istilah dimana kita bisa membuat method di class child yang memiliki nama yang sama dengan class parent-nya -> istilah lain nya menimpa/mengambil alih method class parent
+
+
+kenapa melakukan overriding ?
+karena kita memang akan melakukan fungsionalitas yang sama tetapi dengan beberapa keadaan yang berbeda -> menghindari penulisan kode yang sama (redudant)
+
+
+cara membuat :
+- cek isi dari method class parent dan child, apakah ada kesamaan
+- jika ada kesamaan maka bisa di ringkas penulisan nya menggunakan everriding
+- pada class child ubah isi yang sama dengan parent class dengan keyword parent::(nama method parent)
+
+contoh :
+parent::__construct($judul, $penulis, $penerbit, $harga);       
+atau,
+$str = "Komik : ". parent::getInfoProduk() ." - {$this->jmlHalaman} Halaman";

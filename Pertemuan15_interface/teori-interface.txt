@@ -1,0 +1,100 @@
+== INTERFACE ==
+
+interface erat kaitannya dengan class abstract
+
+interface :
+- kelas abstrak yang sama sekali tidak memiliki implementasi pada tiap2 method nya, baik method abstract ataupun method biasa
+- tidak hanya method abstract yang ada di class parent isi nya kosong (tidak diimplementasikan), tetapi juga semua method yang ada di class parent nya -> semua method itu hanya bisa diimplementasikan pada class child-nya
+- murni merupakan template untuk kelas turunannya 
+- tidak boleh memiliki property, hanya deklarasi method saja -> semua property yang ada di class parent pindah ke class child-nya
+- semua method harus dideklarasikan dengan visibility public
+- boleh mendeklarasikan __construct()
+- satu kelas turunan boleh mengimplementasikan banyak interface
+- dengan mengggunakan type-hinting (object type) dapat melakukan "depedency injection" -> memaksakan sebuah method untuk menerima parameter nya object
+- pada akhirnya akan mencapai polymorphism
+
+
+
+cara membuat :
+- pada class parent ubah keyword class menjadi interface diikuti dengan nama class parent nya dan di tutup dengan {}
+- isi dari class tersebut dengan method nya saja -> tidak perlu ada property dan tidak perlu ada isi method -> implementasi/isi dari method hanya ada di class child
+- pada class child ubah keyword extends menjadi implements diikuti dengan nama class child nya dan di tutup dengan {}
+- isi dari class child dengan property yg berada di class parent dan implementasi dari method2 yang ada di class parent
+
+
+
+contoh :
+
+interface Buah {
+    public function makan();
+    public function setWarna($warna);
+}
+
+class Apel implements Buah{
+    protected $warna;
+
+    public function makan(){
+        // kunyah
+        // sampai bagian tengan
+    } 
+
+    public function setWarna($warna){
+        $this->warna = $warna;
+    }
+}
+
+class Jeruk implements Buah{
+    protected $warna;
+
+    public function makan(){
+        // kupas
+        // kunyah
+    }
+
+    public function setWarna($warna){
+        $this->warna = $warna;
+    }
+}
+
+
+contoh satu kelas boleh mengimplementasikan banyak interface :
+
+interface Buah {
+    public function makan();
+    public function setWarna($warna);
+}
+
+interface Benda {
+    public function setUkuran($ukuran);
+}
+
+class Apel implements Buah, Benda{
+    protected $warna;
+    protected $ukuran;
+
+    public function makan(){
+        // kunyah
+        // sampai bagian tengan
+    } 
+
+    public function setWarna($warna){
+        $this->warna = $warna;
+    }
+
+    public function setUkuran($ukuran){
+        $this->ukuran = $ukuran;
+    }
+}
+
+class Jeruk implements Buah{
+    protected $warna;
+
+    public function makan(){
+        // kupas
+        // kunyah
+    }
+
+    public function setWarna($warna){
+        $this->warna = $warna;
+    }
+}

@@ -1,0 +1,64 @@
+== class & object ==
+
+ilustrasi nya ketika membuat sebuah komplek perumahan mulai dari tahap awal ada yang namanya denah rumah yang akan menjadi acuan untuk membuat rumah, dan denah itu bisa di pakai berkali-kali untuk membuat banyak rumah sehingga menjadi sebuah komplek perumahan dengan denah yang sama.
+
+denah rumah disini bisa disebut dengan class
+dan 
+rumah disini bisa disebut dengan object
+
+
+class -> template atau blueprint untuk membuat sebuah/beberapa object
+object -> implementasi atau instance dari rancangan class yang sudah di buat
+
+
+definisi class :
+- blueprint/template untuk membuat instance dari object
+- class mendefinisikan object
+- menyimpan data dan prilaku yang disebut dengan property dan method
+
+
+membuat class :
+- diawali dengan menuliskan keyword class, diikuti dengan nama class dengan huruf awal kapital dan dibatasi dengan {} untuk meyimpan property dan method
+- aturan penamaan class sama seperti variabel/function
+
+
+contoh :
+<?php
+
+class Coba {
+
+    // property
+    public $a; 
+
+    // method
+    public function b() {
+        ...
+    }
+}
+
+?>
+
+
+object :
+- instance yang didefinisikan oleh class
+- banyak object dapat dibuat menggunakan satu class
+- object dibuat dengan menggunakan keyword new
+
+membuat object :
+- diawali dengan keyword key, diikuti dengan nama class dan dibatasi dengan ()
+
+contoh :
+<?php
+
+// class
+class Coba {
+
+........
+
+}
+
+// membuat object instance dari class
+$a = new Coba();
+$b = new Coba();
+
+?>

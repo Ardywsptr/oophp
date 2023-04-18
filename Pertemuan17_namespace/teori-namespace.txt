@@ -1,0 +1,50 @@
+== NAMESPACE ==
+
+namespace merupakan sebuah cara untuk mengelompokkan program ke dalam sebuah package tersendiri -> menjadi bagian yang memiliki identitas tersendiri
+
+namespace biasa juga disebut dengan encapsulation
+
+kenapa program yang dibuat harus dikelompokkan?
+karena pada dasarnya php tidak mengijinkan kita untuk memiliki 2 class dengan nama yang sama walaupun berbeda folder -> jika memiliki 2 class dengan nama yang sama maka akan error -> dengan mengggunakan namespace maka kita bisa membuat nama class yang sama dengan mengelompokkan nya ke dalam sebuah package
+
+cara membuat :
+- tambahkan keyword namespace dengan diikuti directory file mulai dari nama folder vendor, dan nama folder namespace nya -> diletakan pada awal program samping tag php
+- tambahkan namespace tersebut disemua class yang masih dalam 1 folder
+
+keyword :
+namespace Vendor\Namespace;
+contoh : 
+namespace App\Produk;
+
+cara menjalankan/instansiasi :
+- pada file index bagian instance, tambahkan namespacenya sebelum nama instance/objek nya
+
+keyword : 
+namespace Vendor\Namespace\subNameSpace;
+contoh : 
+new App\Produk\User();
+new App\Service\User();
+
+bagaimana cara mengggunakan autoloading pada namespace yang berbeda ?
+
+*fungsi php explode() berfungsi untuk memecah string berdasarkan pemisah tertentu -> parameter pertama didalam nya yaitu tanda pemisah nya dalam bentuk string, contoh : $class = explode("\\") -> ditulis double back slash karena jika menulis single back slash di sangka php ini merupakan caracter -> parameter kedua merupakan nama string yang mau dipisah ->hasil dari pemisahan function explode() adalah array
+
+kita bisa membuat nama alias untuk namespace, kenapa butuh nama alias? karena jika tidak menggunakan alias setiap kali kita mau memanggil class harus menulis directory namespace yang panjang, akan terasa ribet jika sering kali memanggil sebuah class
+
+cara membuat alias :
+- gunakan keyword use dengan diikuti namespace nya, lalu tambahkan keyword as dengan diikuti nama aliasnya
+
+contoh :
+use App\Produk\User as ProdukUser;
+use App\Service\User as ServiceUser;
+
+cara memanggil alias :
+- seperti pemanggilan instance namun penamaan class nya diganti dengan nama alias
+
+contoh :
+sebelum : 
+new App\Produk\User();
+new App\Service\User();
+sesudah : 
+new ProdukUser();
+new ProdukService();

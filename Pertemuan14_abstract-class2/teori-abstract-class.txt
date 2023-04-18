@@ -1,0 +1,66 @@
+== ABSTRACT CLAS ==
+
+Abstract class :
+- sebuah kelas yang tidak dapat di-instansiasi -> tidak bisa membuat object dari class abstract -> hanya bisa instansiasi kelas turunan nya
+- abstrack class bisa juga disebut dengan kelas "abstrak"
+- mendefinisikan interface untuk kelas lain yangg menjadi turunannya -> yaitu membuat sebuah method abstract khusus untuk digunakan oleh turunannya -> isi dari method abstract ini kosong,isi nya nanti tulis oleh class-class turunannya dengan nama method yang sama dengan abstract class nya
+- berperan sebagai "kerangka dasar" untuk kelas turunannya
+- harus memiliki minimal 1 method abstrak (kerangka/interface)
+- sangat erat kaitannya dengan inheritance
+- digunakan dalam "pewarisan" / inheritance untuk "memaksakan" implementasi method abstrak yang sama untuk semua kelas turunannya
+- semua kelas turunan, harus mengimplementasikan method abstrack yang ada di kelas abstraknya
+- kelas abstrak boleh memiliki property/method reguler ataupun static
+
+
+cara membuat abstract :
+- tambahkah keyword abstract sebelum keyword class diikuti dengan nama class nya
+- tutup dengan {}
+- dalam isi class abstrak buat method abstract dengan menambahkan keyword abstract diikuti dengan keyword visibility, function dan nama method abstrack nya -> tidak ada isi nya -> ini yg disebut interface -> interface ini digunakan sebagai kerangka dasar untuk kelas turunannya -> isi atau implementasi nya ada di kelas turunannya
+
+contoh :
+abstract class Buah
+{
+    private $warna;
+
+    abstract public function makan();
+
+    public function setWarna($warna)
+    {
+        $this->warna = $warna;
+    }
+}
+
+class Apel extends Buah
+{
+    public function makan()
+    {
+        // kunyah
+        // sampai bagian tengan
+    }
+}
+
+class Jeruk extends Jeruk
+{
+    public function makan()
+    {
+        // kupas
+        // kunyah
+    }
+}
+
+
+contoh kelas abstrak :
+- class Mobil extends Kendaraan
+- class Laptop extends Komputer
+- class Email extends Komunikasi
+- ...
+
+
+Alasan kenapa harus menggunakan kelas abstrak ?
+- mempresentasikan ide atau konsep dasar yang nantinya akan di implementasikan oleh kelas-kelas turunannya
+- penggunaan kelas abstrak ini bukan tentang benar atau salah, tetapi tentang keputusan desain atau keputusan tentang rancangan kelas
+- jika kalian menggunakan konsep oop kenapa tidak menggunakan konsep kelas abstrak ini
+- "Composition Over Inheritance" -> sebaik nya melakukan komposisi dari pada harus melakukan pewarisan begitu saja -> sebenarnya tanpa menggunakan kelas abstrak pun bisa, hanya menggunakan pewarisan saja -> seperti kita melakukan class buah tadi. sebenarnya tidak error, hanya saja agak aneh ketika kita meng-instansiasi class buah tersebut, jika class buah tidak pernah di instansiasi tidak jadi masalah -> komposisi disini maksud nya menggunakan abstraksi atau interface -> dengan melakukan komposisi ini merupakan salah satu cara yang nanti nya akan menerapkan oop polimorphism
+- salah satu cara menerapkan polimorphism
+- sentralisasi logic
+- mempermudah pengerjaan tim

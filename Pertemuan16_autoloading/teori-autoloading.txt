@@ -1,0 +1,23 @@
+== AUTO LOADING ==
+
+apa itu autoloading ?
+proses pemanggilan class (file) tanpa harus menggunakan require -> pada saat membuat aplikasi menggunakan kosep oop biasa nya 1 class ditulis dalam 1 file
+
+
+keyword autoloading : spl_autoload_register();
+
+
+cara membuat :
+- pisahkan semua class menjadi 1 file
+- buat file index yang berisi instansiasi dan pemanggilan output
+- buat file init yang berisi keyword require(cara lama)/spl_autoload_register(cara baru otomatis) untuk memanggil semua class secara otomatis yang sudah dipisahkan jadi beberapa file
+- gunakan keyword require init pada index untuk memanggil isi dari file init (pemanggilan semua class)
+
+
+contoh : 
+spl_autoload_register(function ($class) {
+    require_once __DIR__ . "/Produk/" . $class . ".php";
+});
+
+
+__DIR__ merupakan magic constant untuk memnggil directory sebuah file

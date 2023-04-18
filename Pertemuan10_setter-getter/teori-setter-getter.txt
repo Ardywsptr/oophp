@@ -1,0 +1,15 @@
+== METHOD SETTER & GETTER ==
+
+setter & getter disebut juga accessor method
+
+setter getter ini erat kaitan nya dengan visibility
+
+setter getter ini digunakan untuk menghindari ketika membuat sebuah property dengan visibility public -> karena sebaiknya kita tidak membiarkan bagian dari luar class bisa mengakses property secara langsung untuk itu kita bisa mengubah visibilty property nya menjadi protected atau private tergantung dari kebutuhan
+
+setelah kita mengubah visibility public dari sebuah property menjadi protected atau private itu artinya kita tidak lagi punya akses secara langsung jika ingin mendapatkan isi dari property atau bahkan meng-set nilai baru dari sebuah property -> untuk itu kita butuh sebuah method untuk bisa membaca atau melihat isi dari property ataupun mengubah isi nya -> method itu kita akan sebut setter dan getter -> method untuk meng-set dan method untuk meng-get
+
+sebaik nya property itu menggunakan visibilty protected / private -> hindari menggunakan visibilty public
+
+jika ingin mengakes property protected/private dari luar harus terlebih dahulu membuat method, sehingga yang di akses dari luar itu method bukan property nya
+
+alasan memakai setter getter ialah supaya bisa melakukan sesuatu didalam function nya -> contoh nya melakukan validasi

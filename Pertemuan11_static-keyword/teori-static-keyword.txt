@@ -1,0 +1,41 @@
+== STATIC KEYWORD ==
+
+sebenarnya kita bisa mengakses property dan method yang ada di dalam class -> yang artinya bisa mengakes property dan method tanpa menginstansi objek dari class tersebut -> kita bisa melakukan itu menggunakan static keyword -> static property atau static method
+
+
+cara membuat static :
+- buat class seperti biasa
+- tambahkan keyword static setelah keyword visibility pada property ataupun method
+- selesai, static sudah bisa digunakan untuk dipangggil property/method nya tanpa harus instance sebuah objek
+
+cara memanggil property/method static :
+untuk memanggil sebuah property/method static yang lingkup nya di luar scope tersebut maka menggunakan keyword self:: diikuti dengan nama property/method tersebut -> konsep nya sama seperti variabel scope, jika variabel scope menggunakan keyword global -> atau jika tidak menggunakan static kita biasa menggunakan dengan keyword $this-> diikut dengan nama property/method nya
+
+
+cara menggunakan static :
+- untuk menggunakan property atau method tanpa harus instance sebuah objek cukup panggil nama class nya diikuti dengan keyword :: dan nama property/method nya
+
+
+contoh : 
+class ContohStatic {
+    public static $angka = 1;
+
+    public static function hallo(){
+        return "hallo " . self::$angka++ . " kali";
+    }
+}
+
+echo ContohStatic::$angka;
+echo "<br>";
+echo ContohStatic::hallo();
+
+
+kapan kita menggunakan static keyword ?
+untuk apa static keyword ?
+
+static keyword :
+- member (property/method) yang terikat dengan class, bukan dengan object
+- nilai static akan selalu tetap meskipun object di-instansiasi berulang kali
+- membuat kode seolah-olah menjadi "procedural"
+- biasanya digunakan untuk membuat fungsi bantuan/helper
+- biasa digunakan di class-class utility pada framework

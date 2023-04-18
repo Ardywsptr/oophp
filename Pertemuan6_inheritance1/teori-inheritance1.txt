@@ -1,0 +1,10 @@
+== INHERITANCE ==
+
+inhertince merupakan pewarisan
+
+inheritance :
+- menciptakan hierarki antar kelas (parent & child)
+- child class, dapat mewarisi semua properti dan method dari parent-nya (visible)
+- child class, dapat memperluas/mengembangkan (extends) fungsionalitas dari parent-nya
+
+kenapa butuh inheritance ?

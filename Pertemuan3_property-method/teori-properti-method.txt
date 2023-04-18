@@ -1,0 +1,106 @@
+== PROPERTY & METHOD ==
+
+property :
+- merepresentasikan data/keadaan dari sebuah object
+- merupakan variabel yang ada di dalam class (member variable) -> variabel yang ada di dalam sebuah class bukan lagi disebut variabel tetapi property
+- aturan penulisan nya sama seperti variable di dalam PHP, tetapi ditambah dengan keyword visibility (public, private, protected) di depannya
+
+
+method :
+- merepresentasikan perilaku/behaviour dari sebuah object
+- merupakan function yang ada di dalam class -> function yang ada di dalam sebuah class bukan lagi disebut function tetapi method
+- aturan penulisan nya sama seperti function di dalam PHP, tetapi ditambah dengan keyword visibility (public, privat, protected) di depannya
+
+
+analogi sebuah mobil :
+*property (data) :
+- nama
+- merk
+- warna
+- kecepatanMaksimal
+- jumlahPenumpang
+
+*method (perilaku) : -> apa yang bisa dilakukan
+- tambahKecepatan
+- kurangiKecepatan
+- gantiTransmisi
+- belokKiri
+- belokKanan
+
+
+
+contoh penerapan property dan method :
+
+<?php
+class Mobil {
+    public $nama,
+    public $merk,
+    public $warna,
+    public $kecepatanMaksimal,
+    public $jumlahPenumpang,
+
+    public function tambahKecepatan(){
+        
+    }
+    public function kurangiKecepatan(){
+
+    }
+    public function gantiTransmisi(){
+
+    }
+    public function belokKiri(){
+
+    }
+    public function belokKanan(){
+
+    }
+}
+?>
+
+
+ada 2 cara untuk mendefinisikan isi nilai property :
+
+- definisikan secara default (di isi di dalam class nya langsung)
+
+contoh :
+class Produk {
+    public $judul = "judul",
+        $penulis = "penulis",
+        $penerbit = "penerbit",
+        $harga = 0;
+}
+
+$produk1 = new Produk();
+$produk2 = new Produk();
+
+
+- menimpa isi yang sudah ada (di timpa setelah mendefinisikan object nya) -> menimpa hanya pada object tersebut tanpa merubah nilai default dri property yang ada di class -> dapat menambahkan property baru
+
+contoh :
+class Produk {
+    public $judul = "judul",
+        $penulis = "penulis",
+        $penerbit = "penerbit",
+        $harga = 0;
+}
+
+$produk1 = new Produk();
+$produk1->judul = "Naruto";
+
+$produk2 = new Produk();
+$produk2->judul = "Valorant";
+
+
+untuk memanggil sebuah property yang lingkup nya di luar scope tersebut maka menggunakan keyword $this -> konsep nya sama seperti variabel scope, jika variabel scope menggunakan keyword global
+
+contoh :
+class Produk {
+    public $judul = "Judul",
+            $penulis = "Penulis",
+            $penerbit = "Penerbit",
+            $harga = "Harga";
+
+    public function getLabel(){
+        return "Komik : $this->judul, $this->penulis";
+    }
+}

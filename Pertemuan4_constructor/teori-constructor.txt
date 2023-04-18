@@ -1,0 +1,58 @@
+== CONSTRUCTOR ==
+
+Merupakan sebuah method yang spesial/khusus yang ada di dalam class -> method yang otomatis dijalankan ketika sebuah class diinstansiasi object nya
+
+
+cara membuat :
+- buat sebelum method
+- tuliskan keyword visibility -> tulis keyword function -> tulis keyword method spesial __construct() -> didalam parameter constructor bisa di isi dengan property yang ada di dalam class -> diakhiri dengan {}
+
+contoh :
+<?php
+
+class Produk {
+    public $judul = "judul";
+           $penulis = "penulis";
+           $penerbit = "penerbit";
+           $harga = "harga";
+
+    // constructor
+    public function __construct( $judul, $penulis, $penerbit, $harga){
+        $this->judul = $judul;
+        $this->penulis = $penulis;
+        $this->penerbit = $penerbit;
+        $this->harga = $harga;
+    }
+
+    public function getLabel(){
+        return "$this->judul, $this->penulis";
+    }
+}
+?>
+
+$judul (variabel) yang ada di paramater constructor merupakan variabel lokal, berbeda dengan $judul (variabel) yang ada pada class merupakan property
+
+setelah menggunakan constructor sekarang nilai default pada property dipindahkan pada constructor
+
+contoh :
+*sebelum -> property ->
+
+    public $judul = "Judul",
+            $penulis = "Penulis",
+            $penerbit = "Penerbit",
+            $harga = "Harga";
+
+*sesudah -> constructor ->
+
+    public function __construct($judul = "Judul", $penulis = "Penulis", $penerbit = "Penerbit", $harga = "Harga"){
+        $this->judul = $judul;
+        $this->penulis = $penulis;
+        $this->penerbit = $penerbit;
+        $this->harga = $harga;
+    }
+
+
+penggunaan constructor sering kali dipakai ketika koneksi database
+
+rangkuman -> constructor merupakan method khusus yang akan otomatis dijalankan setiap kali membuat sebuah instance dari sebuah class
+

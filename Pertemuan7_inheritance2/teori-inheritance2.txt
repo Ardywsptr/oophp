@@ -1,0 +1,74 @@
+== INHERITANCE ==
+
+inhertince merupakan pewarisan
+
+
+inheritance :
+- menciptakan hierarki antar kelas (parent & child) -> dimana nanti akan banyak class yang memiliki keterhubungan
+- child class, dapat mewarisi semua properti dan method dari parent-nya (visible) yang bisa diakses oleh child class nya -> bisa saja property dan method parent nya tidak bisa di akses oleh child ketika visibilty nya diubah (bukan publik)
+- child class, dapat memperluas/mengembangkan (extends) fungsionalitas dari parent-nya
+
+
+cara membut child inheritance :
+- ketik keyword class diikuti dengan nama child class nya, lalu ketik keyword extends diikuti dengan nama parent class nya, tutup dengan {}
+
+contoh :
+class MobilSport extends Mobil {
+    ........
+};
+
+
+kembali ke analogi mobil secara umum :
+
+class (parent) -> Mobil
+*property (data) :
+- nama
+- merk
+- warna
+- kecepatanMaksimal
+- jumlahPenumpang
+
+*method (perilaku) :
+- tambahKecepatan
+- kurangiKecepatan
+- gantiTransmisi
+- belokKiri
+- belokKanan
+
+penerapan php :
+
+class Mobil {
+    public $nama, $merk, $warna,
+           $kecepatanMaksimal,
+           $jumlahPenumpang;
+
+    public function tambahKecepatan(){
+        return "kecepatan bertambah";
+    }
+}
+
+class (child) -> MobilSport
+*property (data) :
+- turbo
+
+*method (perilaku) :
+- jalankanTurbo
+
+penerapan php :
+
+class MobilSport {
+    public $turbo = false;
+
+    public function jalankanTurbo(){
+        $this->turbo = "true";
+        return "Turbo dijalankan";
+    }
+}
+
+// instance object
+$mobil1 = new MobilSport();
+echo $mobil1->tambahKecepatan(); --> method dari parent
+echo $mobil1->jalankanTurbo();
+
+
+pada kasus di atas class child masih bisa menggunakan method dari class parent dikarenakan inheritance bersifat mewarisi peoperty dan method. -> bisa tidak diwarisi jika visibility nya di ubah

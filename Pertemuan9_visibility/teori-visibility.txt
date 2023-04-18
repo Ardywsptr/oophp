@@ -1,0 +1,22 @@
+== VISIBILITY ==
+
+visibility atau access modifier
+
+
+visibility :
+- konsep yang digunakan untuk mengatur akses dari property dan method pada sebuah object
+- ada 3 keyword visibility : public, protected dan private
+- public : dapat digunakan dimana saja, bahkan diluar kelas
+- protected : hanya dapat digunakan didalam sebuah class beserta turunannya
+- private : hanya dapat digunakan didalam sebuah class tertentu saja
+
+
+kenapa perlu menerapkan access modifier atau visibility :
+- hanya memperlihatkan aspek dari class yang dibutuhkan oleh "client"
+- menentukan kebutuhan yang jelas untuk object
+- memberikan kendali pada kode untuk menghindari "bug"
+
+
+celah pada class ini bisa mengubah isi dari instance yang sudah di set karena kita menggunakan visibility public, seharusnya jangan biarkan sesuatu diluar class bisa memodifikasi isi dari property dan method kita -> solusi dari permasalahan ini yaitu merubah visibility yang tadi nya public menjadi protected/private
+
+
